@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>sslostscApk Store</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header>
+    <h1>sslostscApk Store</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="login.html">Login</a>
+      <a href="signup.html">Signup</a>
+      <a href="upload.html">Upload App</a>
+    </nav>
+  </header>
+
+  <section class="app-list">
+    <h2>Trending Apps</h2>
+    <div class="apps">
+      <!-- Example App Box -->
+      <div class="app-card">
+        <img src="assets/images/sample-icon.png" alt="App Icon" />
+        <h3>Sample App</h3>
+        <p>Version 1.0</p>
+        <a href="app-details.html">View Details</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 sslostscApk Store</p>
+  </footer>
+</body>
+</html>
