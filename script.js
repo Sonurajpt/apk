@@ -58,3 +58,22 @@ function handleAppUpload(event) {
     alert("Please fill all fields and upload the APK.");
   }
 }
+<!-- Firebase App (required) -->
+<script src="https://www.gstatic.com/firebasejs/9.24.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.24.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.24.0/firebase-storage.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.24.0/firebase-database.js"></script>
+
+<script>
+  const firebaseConfig = {
+    apiKey: "YOUR_API_KEY",
+    authDomain: "YOUR_PROJECT.firebaseapp.com",
+    projectId: "YOUR_PROJECT_ID",
+    storageBucket: "YOUR_PROJECT.appspot.com",
+    messagingSenderId: "XXXXXXXXXXXX",
+    appId: "APP_ID",
+    databaseURL: "https://YOUR_PROJECT.firebaseio.com"
+  };
+
+  const app = firebase.initializeApp(firebaseConfig);
+</script>
