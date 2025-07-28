@@ -23,5 +23,26 @@
       <button type="submit">Upload App</button>
     </form>
   </main>
+  <input type="file" id="apkFile" />
+<button onclick="uploadAPK()">Upload APK</button>
+
+<script>
+  const storage = firebase.storage();
+
+  function uploadAPK() {
+    const file = document.getElementById("apkFile").files[0];
+    const storageRef = storage.ref("apks/" + file.name);
+    
+    storageRef.put(file)
+      .then(snapshot => {
+        return snapshot.ref.getDownloadURL();
+      })
+      .then(url => {
+        alert("APK uploaded. Link: " + url);
+        // optional: save to database
+      })
+      .catch(err => alert(err.message));
+  }
+</script>
 </body>
 </html>
