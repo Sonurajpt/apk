@@ -20,5 +20,18 @@
       <button type="submit">Login</button>
     </form>
   </main>
+  <script>
+  function loginUser() {
+    const email = document.getElementById("email").value;
+    const pass = document.getElementById("password").value;
+
+    firebase.auth().signInWithEmailAndPassword(email, pass)
+      .then(user => {
+        alert("Login successful");
+        window.location.href = "upload.html"; // redirect to upload page
+      })
+      .catch(error => alert(error.message));
+  }
+</script>
 </body>
 </html>
