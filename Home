@@ -2,36 +2,147 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <title>KT App Store</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>sslostscApk Store</title>
-  <link rel="stylesheet" href="style.css"/>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f2f2f2;
+    }
+    header {
+      background: #2196f3;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+    nav {
+      background: #1976d2;
+      display: flex;
+      justify-content: center;
+      padding: 10px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+    }
+    .section {
+      padding: 20px;
+      display: none;
+    }
+    .active {
+      display: block;
+    }
+    .apps {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .app-card {
+      background: white;
+      padding: 15px;
+      width: 180px;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    .app-card img {
+      width: 70px;
+      height: 70px;
+    }
+    input, textarea, button {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>sslostscApk Store</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="login.html">Login</a>
-      <a href="signup.html">Signup</a>
-      <a href="upload.html">Upload App</a>
-    </nav>
-  </header>
 
-  <section class="app-list">
-    <h2>Trending Apps</h2>
-    <div class="apps">
-      <!-- Example App Box -->
-      <div class="app-card">
-        <img src="assets/images/sample-icon.png" alt="App Icon" />
-        <h3>Sample App</h3>
-        <p>Version 1.0</p>
-        <a href="app-details.html">View Details</a>
-      </div>
+<header>
+  <h1>KT App Store</h1>
+</header>
+
+<nav>
+  <a href="#" onclick="showSection('home')">Home</a>
+  <a href="#" onclick="showSection('login')">Login</a>
+  <a href="#" onclick="showSection('signup')">Signup</a>
+  <a href="#" onclick="showSection('upload')">Upload App</a>
+</nav>
+
+<!-- Home -->
+<div id="home" class="section active">
+  <h2>Trending Apps</h2>
+  <div class="apps">
+    <div class="app-card">
+      <img src="https://via.placeholder.com/70" alt="App Icon">
+      <h3>Sample App</h3>
+      <p>Version 1.0</p>
+      <a href="#">Download</a>
     </div>
-  </section>
+    <div class="app-card">
+      <img src="https://via.placeholder.com/70" alt="App Icon">
+      <h3>Music Player</h3>
+      <p>Version 2.3</p>
+      <a href="#">Download</a>
+    </div>
+  </div>
+</div>
 
-  <footer>
-    <p>&copy; 2025 sslostscApk Store</p>
-  </footer>
+<!-- Login -->
+<div id="login" class="section">
+  <h2>Developer Login</h2>
+  <form>
+    <input type="email" placeholder="Email" required />
+    <input type="password" placeholder="Password" required />
+    <button type="submit">Login</button>
+  </form>
+</div>
+
+<!-- Signup -->
+<div id="signup" class="section">
+  <h2>Create Developer Account</h2>
+  <form>
+    <input type="text" placeholder="Full Name" required />
+    <input type="text" placeholder="Developer Name" required />
+    <input type="email" placeholder="Email" required />
+    <input type="password" placeholder="Password" required />
+    <button type="submit">Signup</button>
+  </form>
+</div>
+
+<!-- Upload App -->
+<div id="upload" class="section">
+  <h2>Upload Your App</h2>
+  <form>
+    <input type="text" placeholder="App Name" required />
+    <input type="text" placeholder="Version" required />
+    <textarea placeholder="App Description" required></textarea>
+    <input type="file" accept=".apk" required />
+    <input type="file" accept="image/*" required />
+    <button type="submit">Upload</button>
+  </form>
+</div>
+
+<footer>
+  <p>&copy; 2025 KT App Store. All rights reserved.</p>
+</footer>
+
+<script>
+  function showSection(id) {
+    document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+  }
+</script>
+
 </body>
 </html>
